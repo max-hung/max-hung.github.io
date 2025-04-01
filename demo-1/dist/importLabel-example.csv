@@ -1,0 +1,4 @@
+Order Number,Order Value,Order Date,Resend To Company,Service Type,Client Code,Resend Buyer Name,Resend from warehouse,Seller Reference Number,Resend Buyer Street1,Resend Buyer Street2,Resend Buyer Street3,Resend Buyer State,Resend Buyer City/Town,Resend Buyer Postal Code,Resend to Country,Resend Buyer Phone,Resend Buyer Email,Inventory Actual Weight,Inventory Actual Length,Inventory Actual Width,Inventory Actual Height
+order-number1,123,2025-12-12,,Type-1,client1,Max,House-1,Ref-number-1,Test-street,,,VIC,Rowville,1234,TW,123456789,max.hongliren@gmail.com,500,10,10,10
+order-number2,124,2025-12-11,,Type-2,client2,Max,House-2,Ref-number-2,Test-street,,,VIC,Rowville,1235,TW,123456790,max.hongliren@gmail.com,501,11,11,11
+order-number3,125,2025-12-10,,Type-3,client3,Max,House-3,Ref-number-3,Test-street,,,VIC,Rowville,1236,TW,123456791,max.hongliren@gmail.com,502,12,12,12
