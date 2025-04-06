@@ -1,1 +1,0 @@
-import{_ as t,c as n,o as s,D as c}from"./Dyj2WlPb.js";const o={},r={class:"inline-flex justify-center items-center"};function _(e,a){return s(),n("div",r,[c(e.$slots,"default")])}const l=t(o,[["render",_]]);export{l as _};
