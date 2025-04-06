@@ -1,0 +1,1 @@
+function a(r){if(Array.isArray(r))throw new TypeError("Arrays are not supported");return typeof r!="string"?String(r):r===r.toUpperCase()?r:r.replace(new RegExp("([A-Z])(?=[a-z])|(?<=[a-z])([A-Z])","g")," $1$2").trim().replace(/^./,e=>e.toUpperCase())}export{a as f};
