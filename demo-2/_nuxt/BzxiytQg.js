@@ -1,0 +1,1 @@
+import{_ as n,c as t,o as s,D as c}from"./CGtceNn1.js";const o={},r={class:"flex min-h-screen min-w-full items-center justify-center"};function _(e,a){return s(),t("div",r,[c(e.$slots,"default")])}const f=n(o,[["render",_]]);export{f as _};

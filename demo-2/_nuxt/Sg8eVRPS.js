@@ -1,0 +1,1 @@
+import{r as a,j as u}from"./CGtceNn1.js";function i(){const e=a([]),s=(t,o)=>{const r=typeof t=="string"?t:String(t||"Unknown");e.value.push({message:r,visible:r!=="",color:o})},l=()=>{e.value=[]},n=u(()=>e.value.length>0?e.value[e.value.length-1]:{visible:!1,message:"",color:"primary"});return{alerts:e,alertMsg:n,showAlert:s,clearAlerts:l}}export{i as u};
