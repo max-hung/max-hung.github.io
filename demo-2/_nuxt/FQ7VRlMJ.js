@@ -1,0 +1,1 @@
+import{_ as o}from"./lSsI-1dM.js";import{e as n,i as a,o as s,w as r,a as _}from"./BWmc6sBk.js";import{u as i}from"./IQ7qW07a.js";const d=n({__name:"sites",setup(l){return i({title:"Dashboard"}),(m,e)=>{const t=o;return s(),a(t,null,{default:r(()=>e[0]||(e[0]=[_("div",null,null,-1)])),_:1})}}});export{d as default};
