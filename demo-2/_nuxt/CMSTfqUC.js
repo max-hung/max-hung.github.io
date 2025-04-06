@@ -1,0 +1,1 @@
+import{_ as t}from"./B6lfat1k.js";import{e as n,i as a,o as r,w as s,a as _}from"./B9-TfvVs.js";import{u as i}from"./DiTTqIvM.js";const f=n({__name:"profile",setup(l){return i({title:"Profile"}),(p,e)=>{const o=t;return r(),a(o,null,{default:s(()=>e[0]||(e[0]=[_("div",null,null,-1)])),_:1})}}});export{f as default};

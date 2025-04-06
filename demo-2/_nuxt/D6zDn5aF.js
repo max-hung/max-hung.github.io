@@ -1,0 +1,1 @@
+import{_ as t,c,o,D as n}from"./B9-TfvVs.js";const s={},_={class:"card-title"};function r(e,a){return o(),c("div",_,[n(e.$slots,"default",{},void 0,!0)])}const l=t(s,[["render",r],["__scopeId","data-v-29352cb0"]]);export{l as _};

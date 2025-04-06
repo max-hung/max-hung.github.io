@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as s,D as n}from"./BXaAic7d.js";const c={},r={class:"transition-position overflow-auto h-[calc(100vh-124px)] py-7 px-9 bg-slate-100"};function _(o,a){return s(),e("section",r,[n(o.$slots,"default")])}const i=t(c,[["render",_]]);export{i as _};
