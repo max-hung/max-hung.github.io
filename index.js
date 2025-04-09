@@ -79,10 +79,6 @@ const HomePage = defineComponent({
                 ]),
                 h('div', { class: 'text-white text-lg space-y-2' }, [
                     h('div', { class: 'flex items-center gap-2' }, [
-                        h('i', { 'data-lucide': 'phone', class: 'w-5 h-5' }),
-                        '0975-015-040'
-                    ]),
-                    h('div', { class: 'flex items-center gap-2' }, [
                         h('i', { 'data-lucide': 'mail', class: 'w-5 h-5' }),
                         'max.hongliren@gmail.com'
                     ])
