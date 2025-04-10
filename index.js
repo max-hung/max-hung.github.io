@@ -144,7 +144,7 @@ const HomePage = defineComponent({
                     h('hr', { class: 'mb-4 border-gray-300' }),
                     h('div', { class: 'grid grid-cols-2 md:grid-cols-3 gap-y-4 text-lg text-gray-700' },
                         skill.value.map((s, i) =>
-                            h('div', { key: i }, `✔ ${s}`)
+                            h('div', { key: i, class: 'text-item' }, `✔ ${s}`)
                         )
                     )
                 ]),
@@ -155,7 +155,7 @@ const HomePage = defineComponent({
                     h('hr', { class: 'mb-4 border-gray-300' }),
                     h('div', { class: 'grid grid-cols-2 md:grid-cols-3 gap-y-4 text-lg text-gray-700' },
                         tool.value.map((s, i) =>
-                            h('div', { key: i }, `✔ ${s}`)
+                            h('div', { key: i , class: 'text-item' }, `✔ ${s}`)
                         )
                     )
                 ])

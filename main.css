@@ -33,3 +33,9 @@ i[data-lucide] {
 i[data-lucide]:hover {
     transform: scale(1.2) rotate(5deg);
 }
+
+.text-item:hover {
+    transform: translateX(4px);
+    transition: transform 0.1s ease-out;
+
+}
