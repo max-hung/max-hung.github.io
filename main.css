@@ -33,9 +33,22 @@ i[data-lucide] {
 i[data-lucide]:hover {
     transform: scale(1.2) rotate(5deg);
 }
-
+/* ⭐ 頁面載入 fade-in 效果 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+  /* ⭐ 卡片圖片 loading skeleton */
+.skeleton {
+    @apply absolute inset-0 bg-gray-200 animate-pulse;
+  }
+  
 .text-item:hover {
     transform: translateX(4px);
     transition: transform 0.1s ease-out;
-
 }
