@@ -1,4 +1,4 @@
-import { createApp, h, reactive, ref, onMounted, defineComponent } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+import { createApp, h, reactive, ref, onMounted, defineComponent, nextTick } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 import "https://unpkg.com/lucide@latest"
 
 const HomePage = defineComponent({
@@ -42,9 +42,12 @@ const HomePage = defineComponent({
         const tool = ref(['Trello', 'Jira', 'Postman'])
         const isVisible = reactive([false, false, false])
         const cards = ref([])
+        const showScrollTop = ref(false)
+        const scrollIconRef = ref(null)
 
         onMounted(() => {
             lucide.createIcons()
+
             const observer = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
                     const index = cards.value.indexOf(entry.target)
@@ -53,8 +56,17 @@ const HomePage = defineComponent({
                     }
                 })
             }, { threshold: 0.1 })
-
             cards.value.forEach(card => observer.observe(card))
+
+            // 監聽滾動事件
+            window.addEventListener('scroll', async () => {
+                const shouldShow = window.scrollY > 100
+                if (shouldShow !== showScrollTop.value) {
+                    showScrollTop.value = shouldShow
+                    await nextTick()
+                    lucide.createIcons() // 確保 icon 會渲染
+                }
+            })
         })
 
         return () => h('div', null, [
@@ -159,9 +171,15 @@ const HomePage = defineComponent({
 
             // Scroll to top button
             h('button', {
-                class: 'fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition',
+                class: `fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 
+                  transition-opacity duration-500 ${showScrollTop.value ? 'opacity-100' : 'opacity-0 pointer-events-none'}`,
                 onClick: () => window.scrollTo({ top: 0, behavior: 'smooth' })
-            }, h('i', { 'data-lucide': 'arrow-up', class: 'w-5 h-5' }))
+            }, h('i', {
+                'data-lucide': 'arrow-up',
+                class: 'w-5 h-5',
+                ref: scrollIconRef
+            }))
+
         ])
     }
 })
