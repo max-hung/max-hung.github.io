@@ -35,10 +35,28 @@ const HomePage = defineComponent({
         ])
 
         const skill = ref([
-            'Vue 3', 'Nuxt 3', 'SCSS', 'Tailwind CSS', 'TypeScript', 'Pinia / Vuex',
-            'RESTful API 整合', 'Git', 'CI/CD 部署', 'CircleCI', 'PHP', 'Magento',
-            'Laravel', 'Google Cloud Platform', 'Google Tag Manager', 'Cloudflare', 'Terraform'
+            { name: 'Vue 3 / Vue2' },
+            { name: 'Nuxt 3' },
+            { name: 'SCSS' },
+            { name: 'Tailwind CSS' },
+            { name: 'TypeScript' },
+            { name: 'Pinia / Vuex' },
+            { name: 'RESTful API 整合' },
+            { name: 'CoreUI', url: 'https://coreui.io/' },
+            { name: 'Git' },
+            { name: 'CI/CD 部署' },
+            { name: '網站部署 GCP VM 架設' },
+            { name: 'CircleCI', url: 'https://circleci.com/' },
+            { name: 'PHP' },
+            { name: 'Magento', url: 'https://github.com/magento/magento2' },
+            { name: 'GCP CDN' },
+            { name: 'Laravel' },
+            { name: 'Google Cloud Platform' },
+            { name: 'Google Tag Manager' },
+            { name: 'Cloudflare DNS 設定' },
+            { name: 'Terraform', url: 'https://www.terraform.io/' }
         ])
+
         const tool = ref(['Trello', 'Jira', 'Postman'])
         const isVisible = reactive([false, false, false])
         const cards = ref([])
@@ -93,19 +111,17 @@ const HomePage = defineComponent({
 
             // Body content
             h('div', { class: 'max-w-6xl mx-auto p-6 lg:p-10 space-y-12' }, [
-
                 // Resume
                 h('section', { class: 'fade-in visible' }, [
                     h('h2', { class: 'text-3xl font-bold mb-2' }, '簡歷'),
                     h('hr', { class: 'mb-4 border-gray-300' }),
                     h('p', { class: 'text-gray-600 leading-loose text-lg space-y-2' }, [
-                        '具備近八年軟體開發經驗，近年專注於前端工程領域，熟悉 Vue 3、Nuxt 3、Tailwind CSS、Pinia 等現代前端技術，具備模組化開發思維與良好工程實踐，致力於打造穩定、高效、易於維護的前端應用。', h('br'), h('br'),
+                        '具備近八年軟體開發經驗，專注於前端工程領域，熟悉 Vue 3、Nuxt 3、Tailwind CSS、Pinia 等現代前端技術，具備模組化開發思維與良好工程實踐，致力於打造穩定、高效、易於維護的前端應用。', h('br'), h('br'),
                         '曾參與多項實務專案，包括物流標籤系統、自動化倉儲工具、ERP 訂單管理平台及 AI 問答系統，負責從畫面切版、元件設計、狀態管理到 API 串接與部署上線，具備獨立開發與跨部門協作的完整經驗。', h('br'), h('br'),
                         '擅長與 UI/UX 設計師密切合作，重視使用者體驗與設計細節，並能與後端團隊高效整合，推進產品快速迭代與穩定上線。熟悉 Git 版本控制、CI/CD 流程與基本部署，具備良好的問題解決能力與自我學習能力。', h('br'), h('br'),
                         '目前期望加入一個技術導向、重視產品品質的團隊，持續精進前端技術，貢獻自身經驗，協助打造具有競爭力的 Web 應用與使用體驗。'
                     ])
                 ]),
-
                 // Portfolio
                 h('section', {}, [
                     h('h2', { class: 'text-3xl font-bold mb-2 fade-in visible' }, '專案與作品集'),
@@ -145,18 +161,28 @@ const HomePage = defineComponent({
                         )
                     )
                 ]),
-
                 // 技能
                 h('section', { class: 'fade-in visible' }, [
                     h('h2', { class: 'text-3xl font-bold mb-2' }, '專業技能'),
                     h('hr', { class: 'mb-4 border-gray-300' }),
-                    h('div', { class: 'grid grid-cols-2 md:grid-cols-3 gap-y-4 text-lg text-gray-700' },
+                    h(
+                        'div',
+                        { class: 'grid grid-cols-2 md:grid-cols-3 gap-y-4 text-lg text-gray-700' },
                         skill.value.map((s, i) =>
-                            h('div', { key: i, class: 'text-item' }, `✔ ${s}`)
+                            h(
+                                'div',
+                                { key: i, class: 'text-item' },
+                                s.url
+                                    ? h(
+                                        'a',
+                                        { href: s.url, target: '_blank', class: 'text-blue-600 hover:underline' },
+                                        `✔ ${s.name}`
+                                    )
+                                    : `✔ ${s.name}`
+                            )
                         )
                     )
                 ]),
-
                 // 工具
                 h('section', { class: 'fade-in visible' }, [
                     h('h2', { class: 'text-3xl font-bold mb-2' }, '相關工具'),
@@ -168,7 +194,6 @@ const HomePage = defineComponent({
                     )
                 ])
             ]),
-
             // Scroll to top button
             h('button', {
                 class: `fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 
