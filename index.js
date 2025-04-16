@@ -86,28 +86,50 @@ const HomePage = defineComponent({
                 }
             })
         })
-
         return () => h('div', null, [
 
             // Header
             h('div', {
-                class: 'bg-gradient-to-r from-blue-800 to-blue-400 text-white max-w-6xl mx-auto px-10 py-6 flex flex-col lg:flex-row items-center justify-between gap-6 lg:rounded-b-3xl shadow-lg transition-all duration-500'
+                class: 'bg-gradient-to-r from-blue-800 to-blue-400 text-white max-w-6xl mx-auto px-10 py-6 flex flex-col lg:flex-row items-center justify-between gap-6 lg:rounded-b-3xl shadow-lg transition-all duration-500',
             }, [
-                h('div', { class: 'flex items-center gap-6' }, [
+                h('div', {
+                    class: `
+                    relative w-36 h-36 lg:w-40 lg:h-40 perspective-1000 
+                    hover-flip-container
+                  `
+                }, [
                     h('div', {
-                        class: 'bg-gradient-to-br from-white to-slate-100 text-blue-600 text-5xl w-36 h-36 lg:w-40 lg:h-40 rounded-full flex items-center justify-center shadow-xl ring-4 ring-white/50 backdrop-blur-sm hover:scale-105 transition-transform duration-300'
-                    }, name),
-                    h('div', {
-                        class: 'text-3xl lg:text-4xl font-extrabold hidden lg:block text-white drop-shadow-md tracking-wide'
-                    }, englishName)
+                        class: `
+                      relative w-full h-full rounded-full transition-transform duration-700 transform-style-3d flip-card-inner
+                    `,
+                    }, [
+                        // 正面內容
+                        h('div', {
+                            class: `
+                        absolute inset-0 bg-gradient-to-br from-white to-slate-100 text-blue-600 text-5xl rounded-full flex items-center justify-center shadow-xl ring-4 ring-white/50 backdrop-blur-sm
+                        backface-hidden
+                      `,
+                        }, name),
+
+                        // 背面內容
+                        h('div', {
+                            class: `
+                        absolute inset-0 bg-gradient-to-br from-white to-slate-100 text-blue-600 text-5xl rounded-full flex items-center justify-center shadow-xl ring-4 ring-white/50 backdrop-blur-sm
+                        rotate-y-180 backface-hidden
+                      `,
+                        }, englishName),
+                    ]),
                 ]),
                 h('div', { class: 'text-white text-lg space-y-3 lg:text-right' }, [
-                    h('div', { class: 'flex items-center gap-3 hover:text-white/90 transition-colors duration-300' }, [
+                    h('div', {
+                        class: 'flex items-center gap-3 hover:text-white/90 transition-colors duration-300',
+                    }, [
                         h('i', { 'data-lucide': 'mail', class: 'w-5 h-5' }),
-                        'max.hongliren@gmail.com'
-                    ])
-                ])
+                        'max.hongliren@gmail.com',
+                    ]),
+                ]),
             ]),
+
 
             // Body content
             h('div', { class: 'max-w-6xl mx-auto p-6 lg:p-10 space-y-12' }, [
