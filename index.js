@@ -31,6 +31,14 @@ const HomePage = defineComponent({
                 loaded: false,
                 a: 'https://max-hung.github.io/demo-3',
                 description: '內部 AI 問答平台，提升新人培訓效率與知識即時查詢能力。'
+            },
+            {
+                img1: '/img/demo4-1.png',
+                img2: '/img/demo4-2.png',
+                hover: false,
+                loaded: false,
+                a: 'https://max-hung.github.io/demo-4',
+                description: '使用Vue3 + Vite + Tailwindcss 製作簡單的計算機功能 <a href="https://github.com/max-hung/project4-vue-calculator" target="blank">Github</a>'
             }
         ])
 
@@ -57,7 +65,7 @@ const HomePage = defineComponent({
             { name: 'Terraform', url: 'https://www.terraform.io/' }
         ])
 
-        const tool = ref(['Trello', 'Jira', 'Postman'])
+        const tool = ref(['Trello', 'Jira', 'Postman', '靈活使用AI 加速開發效率'])
         const isVisible = reactive([false, false, false])
         const cards = ref([])
         const showScrollTop = ref(false)
@@ -178,7 +186,7 @@ const HomePage = defineComponent({
                                         onMouseleave: () => item.hover = false
                                     })
                                 ]),
-                                h('div', { class: 'p-4 text-gray-700 text-sm leading-relaxed' }, item.description)
+                                h('div', { class: 'p-4 text-gray-700 text-sm leading-relaxed', innerHTML: item.description })
                             ])
                         )
                     )
